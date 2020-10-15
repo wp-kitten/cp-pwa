@@ -1,0 +1,17 @@
+{
+    "name": "cp-pwa",
+    "display_name": "[ContentPress] Progressive Web Application",
+    "description": "Allows your ContentPress website to be available for offline browsing.",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "wp-kitten",
+            "url": "https://wp-kitten.github.io"
+        }
+    ],
+    "contributors": [],
+    "page_url": "https://github.com/wp-kitten/cp-pwa",
+    "update_url": "http://api.contentpress.news/api/plugin/info/cp-pwa",
+    "autoload": "index.php",
+    "thumbnail": "thumb.png"
+}

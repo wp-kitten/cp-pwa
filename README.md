@@ -1,2 +1,2 @@
 # cp-pwa
-Allows your ContentPress website to be available for offline browsing.
+Allows your ContentPress website to be available for offline browsing. A [ContentPress](https://github.com/wp-kitten/contentpress) Plugin.
