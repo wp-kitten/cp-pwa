@@ -2,7 +2,7 @@
     $options = \App\Plugins\CP_PWA\Util::getPluginOptions();
 @endphp
 <!-- Web Application Manifest -->
-<link rel="manifest" href="{{env('APP_URL')}}/manifest.json">
+<link rel="manifest" href="{{env('APP_URL')}}/{{CPPWA_MANIFEST_FILE_NAME}}">
 <!-- Chrome for Android theme color -->
 <meta name="theme-color" content="{{$options['theme_color']}}">
 

@@ -27,7 +27,7 @@ class Util
     public static function generateServiceWorkerFile( $override = false )
     {
         //#! Copy the service worker to public directory if not already there
-        $filePath = public_path( 'cp-pwa-service-worker.js' );
+        $filePath = public_path( CPPWA_SERVICE_WORKER_FILE_NAME );
         if ( !File::isFile( $filePath ) || $override ) {
             $swSource = path_combine( CPPWA_PLUGIN_DIR_PATH, 'assets/service-worker.js' );
             $options = Util::getPluginOptions();
@@ -44,7 +44,7 @@ class Util
             //#! Prepend the localized data since otherwise will throw errors
             $locale = [
                 'offline_page_url' => cp_get_permalink( $page ),
-                'service_worker_url' => asset( 'cp-pwa-service-worker.js' ),
+                'service_worker_url' => asset( CPPWA_SERVICE_WORKER_FILE_NAME ),
                 'app_url' => trailingslashit( env( 'APP_URL' ) ),
             ];
 

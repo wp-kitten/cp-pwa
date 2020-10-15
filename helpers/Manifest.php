@@ -19,7 +19,7 @@ class Manifest
         if ( empty( $options ) ) {
             return;
         }
-        $filePath = public_path( 'manifest.json' );
+        $filePath = public_path( CPPWA_MANIFEST_FILE_NAME );
         $manifest = [];
         foreach ( $options as $optionName => $value ) {
             if ( 'icons' == $optionName ) {

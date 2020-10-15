@@ -45,10 +45,10 @@ add_action( 'contentpress/site/head', function () {
     ?>
     <script id="cp-pwa-locale">
         window.CpPwaServiceLocale = {
-            service_worker_url: "<?php echo asset( 'cp-pwa-service-worker.js' );?>",
+            service_worker_url: "<?php echo asset( CPPWA_SERVICE_WORKER_FILE_NAME );?>",
         };
     </script>
-    <script id="cp-pwa-service-worker" src="<?php echo asset( 'cp-pwa-service-worker.js' ); ?>"></script>
+    <script id="cp-pwa-service-worker" src="<?php echo asset( CPPWA_SERVICE_WORKER_FILE_NAME ); ?>"></script>
     <script id="cp-pwa-service-worker-init" src="<?php echo cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/service-worker-init.js' ); ?>"></script>
     <?php
     echo view( 'cp_pwa-app-header' )->render();
