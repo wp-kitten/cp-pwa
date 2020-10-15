@@ -40,6 +40,9 @@ add_action( 'contentpress/app/loaded', function () {
     }
 } );
 
+/**
+ * Inject scripts & meta tags
+ */
 add_action( 'contentpress/site/head', function () {
     //#! Localized data mainly used by service-worker-init.js
     ?>
@@ -54,3 +57,23 @@ add_action( 'contentpress/site/head', function () {
     echo view( 'cp_pwa-app-header' )->render();
 } );
 
+/**
+ * Delete files when deactivating the plugin
+ */
+add_action( 'contentpress/plugin/deactivated', function ( $pluginDirName, $pluginInfo ) {
+    if ( CPPWA_PLUGIN_DIR_NAME == $pluginDirName ) {
+        try {
+            $swFilePath = public_path( CPPWA_SERVICE_WORKER_FILE_NAME );
+            $mfFilePath = public_path( CPPWA_MANIFEST_FILE_NAME );
+            if ( \Illuminate\Support\Facades\File::isFile( $swFilePath ) ) {
+                \Illuminate\Support\Facades\File::delete( $swFilePath );
+            }
+            if ( \Illuminate\Support\Facades\File::isFile( $mfFilePath ) ) {
+                \Illuminate\Support\Facades\File::delete( $mfFilePath );
+            }
+        }
+        catch ( Exception $e ) {
+            logger( 'An error occurred while trying to delete the service worker file and the manifest.' );
+        }
+    }
+}, 20, 2 );
