@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\CPML;
+use App\Helpers\VPML;
 use App\Http\Controllers\Admin\AdminControllerBase;
 use App\Models\Post;
 use App\Models\PostStatus;
@@ -10,15 +10,15 @@ use App\Models\PostType;
 use App\Plugins\CP_PWA\Manifest;
 use App\Plugins\CP_PWA\Util;
 
-class ContentPressPwaController extends AdminControllerBase
+class ValPressPwaController extends AdminControllerBase
 {
     public function index()
     {
-        return view( 'cp_pwa_config' )->with( [
+        return view( 'vp_pwa_config' )->with( [
             'options' => Util::getPluginOptions( $this->__getDefaultOptions() ),
             'pages' => Post::where( 'post_type_id', PostType::where( 'name', 'page' )->first()->id )
                 ->where( 'post_status_id', PostStatus::where( 'name', 'publish' )->first()->id )
-                ->where( 'language_id', CPML::getDefaultLanguageID() )
+                ->where( 'language_id', VPML::getDefaultLanguageID() )
                 ->where( 'translated_post_id', null )
                 ->get(),
         ] );
@@ -35,22 +35,22 @@ class ContentPressPwaController extends AdminControllerBase
             'theme_color' => '#000000',
             'display' => 'standalone',
             'icons' => [
-                '72x72' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/72x72.png' ),
-                '96x96' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/96x96.png' ),
-                '128x128' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/128x128.png' ),
-                '144x144' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/144x144.png' ),
-                '152x152' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/152x152.png' ),
-                '192x192' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/192x192.png' ),
-                '384x384' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/384x384.png' ),
-                '512x512' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/512x512.png' ),
-                '640x640' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/640x640.png' ),
-                '750x750' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/750x750.png' ),
-                '828x828' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/828x828.png' ),
-                '1125x1125' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1125x1125.png' ),
-                '1242x1242' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1242x1242.png' ),
-                '1536x1536' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1536x1536.png' ),
-                '1668x1668' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1668x1668.png' ),
-                '2048x2048' => cp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/2048x2048.png' ),
+                '72x72' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/72x72.png' ),
+                '96x96' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/96x96.png' ),
+                '128x128' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/128x128.png' ),
+                '144x144' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/144x144.png' ),
+                '152x152' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/152x152.png' ),
+                '192x192' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/192x192.png' ),
+                '384x384' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/384x384.png' ),
+                '512x512' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/512x512.png' ),
+                '640x640' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/640x640.png' ),
+                '750x750' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/750x750.png' ),
+                '828x828' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/828x828.png' ),
+                '1125x1125' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1125x1125.png' ),
+                '1242x1242' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1242x1242.png' ),
+                '1536x1536' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1536x1536.png' ),
+                '1668x1668' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/1668x1668.png' ),
+                '2048x2048' => vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/images/icons/2048x2048.png' ),
             ],
             'offline_page_id' => 0,
         ];

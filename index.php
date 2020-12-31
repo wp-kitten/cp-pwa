@@ -24,10 +24,10 @@ define( 'CPPWA_MANIFEST_FILE_NAME', 'cp-pwa-manifest.json' );
  * The name of the option storing the plugin's options
  * @var string
  */
-define( 'CPPWA_PLUGIN_OPTIONS_OPTION_NAME', 'cp_pwa_options' );
+define( 'CPPWA_PLUGIN_OPTIONS_OPTION_NAME', 'vp_pwa_options' );
 
 require_once( CPPWA_PLUGIN_DIR_PATH . 'helpers/Util.php' );
 require_once( CPPWA_PLUGIN_DIR_PATH . 'helpers/Manifest.php' );
-require_once( CPPWA_PLUGIN_DIR_PATH . 'controllers/ContentPressPwaController.php' );
+require_once( CPPWA_PLUGIN_DIR_PATH . 'controllers/ValPressPwaController.php' );
 require_once( CPPWA_PLUGIN_DIR_PATH . 'hooks.php' );
 require_once( CPPWA_PLUGIN_DIR_PATH . 'routes/web.php' );

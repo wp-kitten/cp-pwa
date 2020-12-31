@@ -1,17 +1,17 @@
 <?php
 
-use App\Http\Controllers\ContentPressPwaController;
+use App\Http\Controllers\ValPressPwaController;
 use Illuminate\Support\Facades\Route;
 
 /*
  * Add custom routes or override existent ones
  */
 
-Route::get( 'admin/settings/cp_pwa', [ ContentPressPwaController::class, 'index' ] )
+Route::get( 'admin/settings/vp_pwa', [ ValPressPwaController::class, 'index' ] )
     ->middleware( [ 'web', 'auth', 'active_user' ] )
-    ->name( 'admin.settings.cp_pwa' );
+    ->name( 'admin.settings.vp_pwa' );
 
-Route::post( 'admin/settings/cp_pwa/save', [ ContentPressPwaController::class, '__save' ] )
+Route::post( 'admin/settings/vp_pwa/save', [ ValPressPwaController::class, '__save' ] )
     ->middleware( [ 'web', 'auth', 'active_user' ] )
-    ->name( 'admin.settings.cp_pwa.save' );
+    ->name( 'admin.settings.vp_pwa.save' );
 

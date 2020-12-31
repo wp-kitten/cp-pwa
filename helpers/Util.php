@@ -43,7 +43,7 @@ class Util
 
             //#! Prepend the localized data since otherwise will throw errors
             $locale = [
-                'offline_page_url' => cp_get_permalink( $page ),
+                'offline_page_url' => vp_get_permalink( $page ),
                 'service_worker_url' => asset( CPPWA_SERVICE_WORKER_FILE_NAME ),
                 'app_url' => trailingslashit( env( 'APP_URL' ) ),
             ];

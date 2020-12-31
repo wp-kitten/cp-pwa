@@ -4,9 +4,9 @@ if ( 'serviceWorker' in navigator ) {
         scope: '.'
     } ).then( function (registration) {
         // Registration was successful
-        console.log( 'ContentPress PWA: ServiceWorker registration successful with scope: ', registration.scope );
+        console.log( 'ValPress PWA: ServiceWorker registration successful with scope: ', registration.scope );
     }, function (err) {
         // registration failed :(
-        console.log( 'ContentPress PWA: ServiceWorker registration failed: ', err );
+        console.log( 'ValPress PWA: ServiceWorker registration failed: ', err );
     } );
 }

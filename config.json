@@ -1,7 +1,7 @@
 {
-    "name": "cp-pwa",
-    "display_name": "[ContentPress] Progressive Web Application",
-    "description": "Allows your ContentPress website to be available for offline browsing.",
+    "name": "valpress-pwa",
+    "display_name": "[ValPress] Progressive Web Application",
+    "description": "Allows your ValPress website to be available for offline browsing.",
     "version": "0.2",
     "authors": [
         {
@@ -10,8 +10,8 @@
         }
     ],
     "contributors": [],
-    "page_url": "https://github.com/wp-kitten/cp-pwa",
-    "update_url": "http://api.contentpress.news/api/plugin/info/cp-pwa",
+    "page_url": "https://github.com/wp-kitten/valpress-pwa",
+    "update_url": "http://api.valpress.net/api/plugin/info/valpress-pwa",
     "autoload": "index.php",
     "thumbnail": "thumb.png"
 }

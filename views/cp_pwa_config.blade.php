@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('page-title')
-    <title>{{__('cppwa::m.ContentPress Progressive Web Application')}}</title>
+    <title>{{__('cppwa::m.ValPress Progressive Web Application')}}</title>
 @endsection
 
 @section('main')
@@ -16,12 +16,12 @@
 
     @include('admin.partials.notices')
 
-    @if(cp_current_user_can('administrator'))
+    @if(vp_current_user_can('administrator'))
         <div class="row">
             <div class="col-md-12">
                 <div class="tile">
                     <h4 class="tile-title">{{__("cppwa::m.Options")}}</h4>
-                    <form action="{{route('admin.settings.cp_pwa.save')}}" method="post">
+                    <form action="{{route('admin.settings.vp_pwa.save')}}" method="post">
                         @csrf
 
                         <div class="form-group">

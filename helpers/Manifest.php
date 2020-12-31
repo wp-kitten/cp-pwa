@@ -40,7 +40,7 @@ class Manifest
                 $options = Util::getPluginOptions();
                 $page = Post::find( $options[ 'offline_page_id' ] );
                 if ( $page && $page->id ) {
-                    $manifest[ 'offline_page_url' ] = cp_get_permalink( $page );
+                    $manifest[ 'offline_page_url' ] = vp_get_permalink( $page );
                 }
             }
             else {

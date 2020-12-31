@@ -1,2 +1,2 @@
 # cp-pwa
-Allows your ContentPress website to be available for offline browsing. A [ContentPress](https://github.com/wp-kitten/contentpress) Plugin.
+Allows your ValPress website to be available for offline browsing. A [ValPress](https://github.com/wp-kitten/valpress) Plugin.
