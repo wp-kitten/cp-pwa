@@ -1,5 +1,5 @@
 @php
-    $options = \App\Plugins\CP_PWA\Util::getPluginOptions();
+    $options = \App\Plugins\VP_PWA\Util::getPluginOptions();
 @endphp
 <!-- Web Application Manifest -->
 <link rel="manifest" href="{{env('APP_URL')}}/{{CPPWA_MANIFEST_FILE_NAME}}">

@@ -2,6 +2,7 @@
 return [
     'PWA' => 'PWA',
     'Progressive Web Application' => 'Progressive Web Application',
+    'ValPress Progressive Web Application' => 'ValPress Progressive Web Application',
     'Options' => 'Options',
     "Name" => "Name",
     "Save" => "Save",

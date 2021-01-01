@@ -1,7 +1,8 @@
 <?php
-//#! Register the views path
+
 use App\Helpers\MenuHelper;
-use App\Plugins\CP_PWA\Util;
+use App\Plugins\VP_PWA\Manifest;
+use App\Plugins\VP_PWA\Util;
 
 add_filter( 'valpress/register_view_paths', function ( $paths = [] ) {
     $viewPath = path_combine( public_path( 'plugins' ), CPPWA_PLUGIN_DIR_NAME, 'views' );
@@ -31,9 +32,10 @@ add_action( 'valpress/admin/sidebar/menu/settings', function () {
 add_action( 'valpress/app/loaded', function () {
     vp_register_language_file( 'cppwa', path_combine( public_path( 'plugins' ), CPPWA_PLUGIN_DIR_NAME, 'lang' ) );
 
-    //#! Copy the service worker to public directory if not already there
+    //#! Copy the service worker & the manifest files to public directory if not already there
     try {
         Util::generateServiceWorkerFile();
+        Manifest::generate( Util::getPluginOptions() );
     }
     catch ( Exception $e ) {
         logger( __( 'cppwa::m.Error creating the service worker file: :error', [ 'error' => $e->getMessage() ] ) );
@@ -44,15 +46,15 @@ add_action( 'valpress/app/loaded', function () {
  * Inject scripts & meta tags
  */
 add_action( 'valpress/site/head', function () {
-    //#! Localized data mainly used by service-worker-init.js
+    //#! Localized data, mainly used by service-worker-init.js
     ?>
-    <script id="cp-pwa-locale">
+    <script id="vp-pwa-locale">
         window.CpPwaServiceLocale = {
             service_worker_url: "<?php echo asset( CPPWA_SERVICE_WORKER_FILE_NAME );?>",
         };
     </script>
-    <script id="cp-pwa-service-worker" src="<?php echo asset( CPPWA_SERVICE_WORKER_FILE_NAME ); ?>"></script>
-    <script id="cp-pwa-service-worker-init" src="<?php echo vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/service-worker-init.js' ); ?>"></script>
+    <script id="vp-pwa-service-worker" src="<?php echo asset( CPPWA_SERVICE_WORKER_FILE_NAME ); ?>"></script>
+    <script id="vp-pwa-service-worker-init" src="<?php echo vp_plugin_url( CPPWA_PLUGIN_DIR_NAME, 'assets/service-worker-init.js' ); ?>"></script>
     <?php
     echo view( 'vp_pwa-app-header' )->render();
 } );

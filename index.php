@@ -13,12 +13,12 @@ define( 'CPPWA_PLUGIN_DIR_PATH', trailingslashit( wp_normalize_path( dirname( __
  * The name of the service worker file
  * @var string
  */
-define( 'CPPWA_SERVICE_WORKER_FILE_NAME', 'cp-pwa-service-worker.js' );
+define( 'CPPWA_SERVICE_WORKER_FILE_NAME', 'vp-pwa-service-worker.js' );
 /**
  * The name of the manifest file
  * @var string
  */
-define( 'CPPWA_MANIFEST_FILE_NAME', 'cp-pwa-manifest.json' );
+define( 'CPPWA_MANIFEST_FILE_NAME', 'vp-pwa-manifest.json' );
 
 /**
  * The name of the option storing the plugin's options

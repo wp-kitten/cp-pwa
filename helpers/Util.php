@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Plugins\CP_PWA;
+namespace App\Plugins\VP_PWA;
 
 use App\Models\Options;
 use App\Models\Post;
@@ -30,7 +30,7 @@ class Util
         $filePath = public_path( CPPWA_SERVICE_WORKER_FILE_NAME );
         if ( !File::isFile( $filePath ) || $override ) {
             $swSource = path_combine( CPPWA_PLUGIN_DIR_PATH, 'assets/service-worker.js' );
-            $options = Util::getPluginOptions();
+            $options = self::getPluginOptions();
 
             if ( empty( $options ) ) {
                 throw new \Exception( __( "cppwa::m.Please configure the plugin." ) );
@@ -41,7 +41,7 @@ class Util
                 throw new \Exception( __( 'cppwa::m.Please specify the offline page.' ) );
             }
 
-            //#! Prepend the localized data since otherwise will throw errors
+            //#! Prepend the localized data, otherwise will throw errors
             $locale = [
                 'offline_page_url' => vp_get_permalink( $page ),
                 'service_worker_url' => asset( CPPWA_SERVICE_WORKER_FILE_NAME ),

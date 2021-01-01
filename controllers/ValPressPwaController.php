@@ -7,8 +7,8 @@ use App\Http\Controllers\Admin\AdminControllerBase;
 use App\Models\Post;
 use App\Models\PostStatus;
 use App\Models\PostType;
-use App\Plugins\CP_PWA\Manifest;
-use App\Plugins\CP_PWA\Util;
+use App\Plugins\VP_PWA\Manifest;
+use App\Plugins\VP_PWA\Util;
 
 class ValPressPwaController extends AdminControllerBase
 {
